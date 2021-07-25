@@ -1,19 +1,19 @@
 <idea-plugin>
 
     <extensions defaultExtensionNs="Jenkins Control Plugin">
-        <buildParameterRenderer implementation="org.codinjutsu.tools.jenkins.view.parameter.BuiltInJobParameterRenderer"
+        <buildParameterRenderer implementation="live.ashish.airjet.view.parameter.BuiltInJobParameterRenderer"
                                 order="first"
                                 id="BUILT_IN_RENDERER" />
-        <buildParameterRenderer implementation="org.codinjutsu.tools.jenkins.view.parameter.SeparatorRenderer" />
-        <buildParameterRenderer implementation="org.codinjutsu.tools.jenkins.view.parameter.NodeParameterRenderer" />
-        <buildParameterRenderer implementation="org.codinjutsu.tools.jenkins.view.parameter.HiddenParameterRenderer" />
-        <buildParameterRenderer implementation="org.codinjutsu.tools.jenkins.view.parameter.PatchParameterRenderer" />
-        <buildParameterRenderer implementation="org.codinjutsu.tools.jenkins.view.parameter.GitParameterRenderer" />
+        <buildParameterRenderer implementation="live.ashish.airjet.view.parameter.SeparatorRenderer" />
+        <buildParameterRenderer implementation="live.ashish.airjet.view.parameter.NodeParameterRenderer" />
+        <buildParameterRenderer implementation="live.ashish.airjet.view.parameter.HiddenParameterRenderer" />
+        <buildParameterRenderer implementation="live.ashish.airjet.view.parameter.PatchParameterRenderer" />
+        <buildParameterRenderer implementation="live.ashish.airjet.view.parameter.GitParameterRenderer" />
         <buildParameterRenderer
-                implementation="org.codinjutsu.tools.jenkins.view.parameter.PersistentParameterRenderer"/>
-        <buildParameterRenderer implementation="org.codinjutsu.tools.jenkins.view.parameter.ListGitBranchesParameterRenderer" />
-        <buildParameterRenderer implementation="org.codinjutsu.tools.jenkins.view.parameter.ExtendedChoiceParameterRenderer" />
-        <buildParameterRenderer implementation="org.codinjutsu.tools.jenkins.view.parameter.DateParameterRenderer" />
-        <buildParameterRenderer implementation="org.codinjutsu.tools.jenkins.view.parameter.ExtensibleChoiceParameterRenderer" />
+                implementation="live.ashish.airjet.view.parameter.PersistentParameterRenderer"/>
+        <buildParameterRenderer implementation="live.ashish.airjet.view.parameter.ListGitBranchesParameterRenderer" />
+        <buildParameterRenderer implementation="live.ashish.airjet.view.parameter.ExtendedChoiceParameterRenderer" />
+        <buildParameterRenderer implementation="live.ashish.airjet.view.parameter.DateParameterRenderer" />
+        <buildParameterRenderer implementation="live.ashish.airjet.view.parameter.ExtensibleChoiceParameterRenderer" />
     </extensions>
 </idea-plugin>
