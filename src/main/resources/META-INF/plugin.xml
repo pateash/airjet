@@ -1,14 +1,11 @@
 <idea-plugin xmlns:xi="http://www.w3.org/2001/XInclude" require-restart="false">
     <!--suppress PluginXmlValidity -->
-    <name>Jenkins Control</name>
-    <id>Jenkins Control Plugin</id>
+    <name>AirJet</name>
+    <id>Airjet</id>
     <description><![CDATA[A Jenkins Plugin for Intellij. Will be replaced by gradle build]]></description>
     <version>0.11.0</version>
-    <vendor url="https://github.com/MCMicS/jenkins-control-plugin/issues">
-        Programisci.eu
-        David Boissier,
-        Yuri Novitsky (support of PPP),
-        Michael Suhr
+    <vendor url="https://github.com/pateash/airjet/issues">
+        Ashish Patel
     </vendor>
     <idea-version since-build="212.4037"/>
 

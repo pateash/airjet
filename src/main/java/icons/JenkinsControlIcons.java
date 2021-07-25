@@ -8,7 +8,7 @@ public class JenkinsControlIcons {
 
     private static final String ICON_FOLDER = "/images/";
 
-    public static final Icon JENKINS_TOOLWINDOW_ICON = getIcon("toolWindow_jenkins_icon.svg");
+    public static final Icon JENKINS_TOOLWINDOW_ICON = getIcon("airflow.svg");
     public static final Icon TOOLWINDOW_TEST_RESULTS = getIcon("toolWindowGroupByTestProduction.svg");
 
     public static final Icon RSS = getIcon("rss.svg");
