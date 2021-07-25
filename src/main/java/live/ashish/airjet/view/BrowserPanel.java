@@ -16,13 +16,6 @@
 
 package live.ashish.airjet.view;
 
-import live.ashish.airjet.*;
-import live.ashish.airjet.*;
-import live.ashish.airjet.exception.JenkinsPluginRuntimeException;
-import live.ashish.airjet.logic.*;
-import live.ashish.airjet.model.*;
-import live.ashish.airjet.view.action.*;
-import live.ashish.airjet.view.action.settings.SortByStatusAction;
 import com.intellij.notification.NotificationType;
 import com.intellij.openapi.actionSystem.ActionManager;
 import com.intellij.openapi.actionSystem.DefaultActionGroup;
@@ -35,16 +28,15 @@ import com.intellij.openapi.ui.SimpleToolWindowPanel;
 import com.intellij.ui.PopupHandler;
 import com.intellij.ui.ScrollPaneFactory;
 import com.intellij.util.ui.tree.TreeUtil;
-import live.ashish.airjet.logic.*;
-import live.ashish.airjet.model.*;
-import live.ashish.airjet.view.action.*;
-import org.apache.commons.lang.StringUtils;
 import live.ashish.airjet.*;
+import live.ashish.airjet.exception.JenkinsPluginRuntimeException;
 import live.ashish.airjet.logic.*;
 import live.ashish.airjet.model.*;
 import live.ashish.airjet.util.CollectionUtil;
 import live.ashish.airjet.util.GuiUtil;
 import live.ashish.airjet.view.action.*;
+import live.ashish.airjet.view.action.settings.SortByStatusAction;
+import org.apache.commons.lang.StringUtils;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;

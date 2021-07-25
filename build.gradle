@@ -9,11 +9,11 @@ plugins {
     id 'jacoco'
 }
 def jenkinsPluginName = 'AirJet'
-def jenkinsPluginVersion = '0.0.1'
+def jenkinsPluginVersion = '2021.1'
 def javaVersion = 11
 
 group 'live.ashish'
-version "${jenkinsPluginVersion}-2021.2-eap5"
+version "${jenkinsPluginVersion}-eap1"
 apply plugin: 'org.jetbrains.intellij'
 apply plugin: 'org.jetbrains.changelog'
 apply plugin: 'java'
