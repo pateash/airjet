@@ -1,0 +1,19 @@
+<idea-plugin>
+
+    <extensions defaultExtensionNs="Jenkins Control Plugin">
+        <buildParameterRenderer implementation="live.ashish.airjet.view.parameter.BuiltInJobParameterRenderer"
+                                order="first"
+                                id="BUILT_IN_RENDERER" />
+        <buildParameterRenderer implementation="live.ashish.airjet.view.parameter.SeparatorRenderer" />
+        <buildParameterRenderer implementation="live.ashish.airjet.view.parameter.NodeParameterRenderer" />
+        <buildParameterRenderer implementation="live.ashish.airjet.view.parameter.HiddenParameterRenderer" />
+        <buildParameterRenderer implementation="live.ashish.airjet.view.parameter.PatchParameterRenderer" />
+        <buildParameterRenderer implementation="live.ashish.airjet.view.parameter.GitParameterRenderer" />
+        <buildParameterRenderer
+                implementation="live.ashish.airjet.view.parameter.PersistentParameterRenderer"/>
+        <buildParameterRenderer implementation="live.ashish.airjet.view.parameter.ListGitBranchesParameterRenderer" />
+        <buildParameterRenderer implementation="live.ashish.airjet.view.parameter.ExtendedChoiceParameterRenderer" />
+        <buildParameterRenderer implementation="live.ashish.airjet.view.parameter.DateParameterRenderer" />
+        <buildParameterRenderer implementation="live.ashish.airjet.view.parameter.ExtensibleChoiceParameterRenderer" />
+    </extensions>
+</idea-plugin>

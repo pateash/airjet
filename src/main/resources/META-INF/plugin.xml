@@ -1,0 +1,96 @@
+<idea-plugin xmlns:xi="http://www.w3.org/2001/XInclude" require-restart="false">
+    <!--suppress PluginXmlValidity -->
+    <name>AirJet</name>
+    <id>Airjet</id>
+    <description><![CDATA[A Jenkins Plugin for Intellij. Will be replaced by gradle build]]></description>
+    <version>0.11.0</version>
+    <vendor url="https://github.com/pateash/airjet/issues">
+        Ashish Patel
+    </vendor>
+    <idea-version since-build="212.4037"/>
+
+    <depends>com.intellij.modules.platform</depends>
+    <depends>com.intellij.modules.vcs</depends>
+    <depends>com.intellij.modules.lang</depends>
+    <depends optional="true" config-file="JavaSupport.xml">com.intellij.java</depends>
+    <xi:include href="/META-INF/JobParameterRenderer.xml" xpointer="xpointer(/idea-plugin/*)"/>
+
+    <extensions defaultExtensionNs="com.intellij">
+        <projectConfigurable parentId="tools" groupWeight="110" dynamic="true" displayName="Jenkins Plugin"
+                             id="preferences.Jenkins" instance="live.ashish.airjet.JenkinsComponent"/>
+
+        <projectService serviceImplementation="live.ashish.airjet.logic.ExecutorService" />
+        <projectService serviceImplementation="live.ashish.airjet.logic.LoginService" />
+        <projectService serviceImplementation="live.ashish.airjet.JenkinsAppSettings"/>
+        <projectService serviceImplementation="live.ashish.airjet.JenkinsSettings"/>
+        <projectService serviceImplementation="live.ashish.airjet.JenkinsWindowManager"/>
+        <projectService serviceImplementation="live.ashish.airjet.view.JenkinsWidget"/>
+        <projectService serviceImplementation="live.ashish.airjet.logic.RequestManager"/>
+        <projectService serviceImplementation="live.ashish.airjet.logic.UrlBuilder"/>
+        <projectService serviceImplementation="live.ashish.airjet.view.BrowserPanel"/>
+        <projectService serviceImplementation="live.ashish.airjet.logic.RssLogic"/>
+        <projectService serviceImplementation="live.ashish.airjet.logic.BrowserPanelAuthenticationHandler"/>
+        <projectService serviceImplementation="live.ashish.airjet.logic.RssAuthenticationActionHandler"/>
+
+        <backgroundPostStartupActivity implementation="live.ashish.airjet.StartupJenkinsService" />
+
+        <toolWindow id="Jenkins"
+                    anchor="right"
+                    canCloseContents="false"
+                    factoryClass="live.ashish.airjet.JenkinsToolWindowFactory"
+                    doNotActivateOnStart="false"
+                    icon="JenkinsControlIcons.JENKINS_TOOLWINDOW_ICON" />
+        <toolWindow id="Job test results"
+                    anchor="bottom"
+                    canCloseContents="true"
+                    doNotActivateOnStart="true"
+                    icon="JenkinsControlIcons.TOOLWINDOW_TEST_RESULTS"
+                    factoryClass="live.ashish.airjet.view.action.results.JobTestResultsToolWindowFactory"/>
+        <toolWindow id="JenkinsLogs"
+                    anchor="bottom"
+                    canCloseContents="true"
+                    doNotActivateOnStart="true"
+                    icon="JenkinsControlIcons.JENKINS_TOOLWINDOW_ICON"
+                    factoryClass="live.ashish.airjet.view.action.LogToolWindowFactory"/>
+        <statusBarWidgetFactory implementation="live.ashish.airjet.BuildStatusSummaryFactory" />
+        <aboutPopupDescriptionProvider implementation="live.ashish.airjet.view.JenkinsAbout" />
+        <notificationGroup displayType="NONE" id="Jenkins Rss" />
+        <notificationGroup displayType="TOOL_WINDOW" id="Jenkins Notification" toolWindowId="Jenkins"/>
+        <vcs.changeListDecorator implementation="live.ashish.airjet.WatchedJobsDecorator" />
+    </extensions>
+
+    <actions>
+        <action id="Jenkins.CreatePatchAndBuildOnJenkins" class="live.ashish.airjet.view.action.CreatePatchAndBuildAction"
+                text="Create Patch and Build on Jenkins">
+            <add-to-group group-id="ChangesViewPopupMenu" anchor="last"/>
+        </action>
+        <action id="Jenkins.LoadBuilds" class="live.ashish.airjet.view.action.LoadBuildsAction"
+                text="Load Builds"
+                description="Load builds for selected Job"
+                icon="JenkinsControlIcons.LOAD_BUILDS"
+        >
+            <override-text place="GoToAction" text="Jenkins: Load Builds" />
+        </action>
+        <action id="Jenkins.RunBuild" class="live.ashish.airjet.view.action.RunBuildAction"
+                text="Build on Jenkins"
+                description="Run a build on Jenkins Server"
+                icon="AllIcons.Actions.Execute"
+        >
+            <override-text place="GoToAction" text="Jenkins: Build on Jenkins" />
+        </action>
+    </actions>
+
+    <extensionPoints>
+        <extensionPoint name="viewTestResults"
+                        interface="live.ashish.airjet.view.extension.ViewTestResults"
+                        dynamic="true"/>
+        <extensionPoint name="buildParameterRenderer"
+                        interface="live.ashish.airjet.view.extension.JobParameterRenderer"
+                        dynamic="true"/>
+    </extensionPoints>
+
+    <!--suppress PluginXmlValidity -->
+    <change-notes>
+        <![CDATA[REPLACED BY pluginDescription.html]]>
+    </change-notes>
+</idea-plugin>
